@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import SectionFade from "@/components/SectionFade";
 import LiveStudentCounter from "@/components/LiveStudentCounter";
 import CoreValues from "@/components/CoreValues";
+import FirstClassVideoCard from "@/components/FirstClassVideoCard";
 import { LandingEventFooter, LandingEventPopup } from "@/components/FeaturedEvent";
 import { PreservedInjuSupportStrip } from "@/components/INJU_LOGO_DO_NOT_DELETE";
 import { supabase } from "@/integrations/supabase/client";
@@ -460,6 +461,18 @@ const ValueProp = () => (
   </section>
 );
 
+const FirstClassVideo = () => {
+  return (
+    <section className="relative overflow-hidden bg-background py-12 md:py-24" aria-labelledby="first-class-heading">
+      <div className="container">
+        <SectionFade>
+          <FirstClassVideoCard />
+        </SectionFade>
+      </div>
+    </section>
+  );
+};
+
 const OurValues = () => (
   <section className="relative py-12 md:py-24 overflow-hidden bg-background">
     <div className="container">
@@ -606,6 +619,7 @@ const Index = () => (
     <Hero />
     <ProblemSection />
     <ValueProp />
+    <FirstClassVideo />
     <OurValues />
     <HowItWorks />
     <MovementCTA />

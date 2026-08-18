@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SectionFade from "@/components/SectionFade";
+import FirstClassVideoCard from "@/components/FirstClassVideoCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { curriculumClasses, curriculumClassCount } from "@/lib/curriculum";
 import { ArrowRight } from "lucide-react";
@@ -36,11 +37,14 @@ const ProgramPage = () => (
         <h2 className="text-3xl md:text-4xl text-foreground mb-10">
           {curriculumClassCount} clases. Todo lo esencial.
         </h2>
+        <div className="mb-14">
+          <FirstClassVideoCard />
+        </div>
         <Accordion type="single" collapsible className="space-y-2">
           {curriculumClasses.map((item) => (
             <AccordionItem key={item.id} value={item.id} className="border border-border rounded-lg px-6 overflow-hidden">
               <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline py-5">
-                Clase {item.classNumber}: {item.title}
+                Módulo {item.classNumber}: {item.title}
               </AccordionTrigger>
               <AccordionContent className="pb-5">
                 <p className="text-muted-foreground leading-relaxed mb-4">{item.summary}</p>
